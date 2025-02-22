@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance & Investment</title>
+  <meta name="description" content="Feroz FinancePro - Your partner in financial growth. Expert advice on investments, stocks, and financial planning.">
+  <meta name="keywords" content="finance, investment, stocks, financial planning, share market">
+  <meta name="author" content="Feroz FinancePro">
+  <link rel="icon" type="image/png" href="path-to-your-favicon.png">
+  <style>
+    /* Basic reset */
+    body,
+    h1,
+    h2,
+    h3,
+    p,
+    ul {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    body.dark-mode .navbar,
+    body.dark-mode .footer,
+    body.dark-mode .about {
+      background-color: #1f1f1f;
+    }
+
+    body.dark-mode .hero,
+    body.dark-mode .services,
+    body.dark-mode .testimonials {
+      background-color: #2c2c2c;
+    }
+
+    body.dark-mode .card {
+      background-color: #333;
+      color: #fff;
+    }
+
+    body.dark-mode .card p {
+      color: #ccc;
+    }
+
+    body.dark-mode .navbar .nav-links a,
+    body.dark-mode .footer .social-icons a {
+      color: #ffffff;
+    }
+
+    body.dark-mode .navbar .nav-links a:hover,
+    body.dark-mode .footer .social-icons a:hover {
+      color: #00cc66;
+    }
+
+    body.dark-mode .hero h1,
+    body.dark-mode .services h2,
+    body.dark-mode .testimonials h2,
+    body.dark-mode .about h2 {
+      color: #00cc66;
+    }
+
+    body.dark-mode .hero p,
+    body.dark-mode .services .card p,
+    body.dark-mode .testimonials .card p,
+    body.dark-mode .about p {
+      color: #ccc;
+    }
+
+    body.dark-mode .cta-button,
+    body.dark-mode .learn-more {
+      background-color: #00cc66;
+      color: white;
+    }
+
+    body.dark-mode .cta-button:hover,
+    body.dark-mode .learn-more:hover {
+      background-color: #00994d;
+    }
+
+    /* Navbar styling */
+    .navbar {
+      background-color: #003366;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+    }
+
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .navbar .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .navbar .nav-links a:hover {
+      color: #00cc66;
+    }
+
+    /* Hero section */
+    .hero {
+      background-color: #f4f4f4;
+      padding: 100px 10%;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 40px;
+    }
+
+    .hero .cta-button {
+      background-color: #00cc66;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .hero .cta-button:hover {
+      background-color: #00994d;
+    }
+
+    /* Services section */
+    .services {
+      padding: 80px 10%;
+      background-color: white;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 36px;
+      color: #003366;
+      margin-bottom: 40px;
+    }
+
+    .services .service-cards {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .services .card {
+      background-color: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .services .card h3 {
+      font-size: 24px;
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .services .card p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    /* About section */
+    .about {
+      padding: 80px 10%;
+      background-color: #003366;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .about .content {
+      flex: 1;
+    }
+
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .about .learn-more {
+      background-color: #00cc66;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .about .learn-more:hover {
+      background-color: #00994d;
+    }
+
+    .about img {
+      flex: 1;
+      max-width: 100%;
+      border-radius: 10px;
+    }
+
+    /* Testimonials section */
+    .testimonials {
+      padding: 80px 10%;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: 36px;
+      color: #003366;
+      margin-bottom: 40px;
+    }
+
+    .testimonials .testimonial-cards {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .testimonials .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .testimonials .card p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .testimonials .card .author {
+      font-size: 14px;
+      color: #003366;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #003366;
+      color: white;
+      padding: 40px 10%;
+      text-align: center;
+    }
+
+    .footer .social-icons {
+      margin-bottom: 20px;
+    }
+
+    .footer .social-icons a {
+      color: white;
+      font-size: 24px;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icons a:hover {
+      color: #00cc66;
+    }
+
+    .footer .copyright {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar .nav-links {
+        margin-top: 10px;
+      }
+
+      .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about img {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo">Feroz FinancePro</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+      <button onclick="toggleDarkMode()">🌙</button>
+    </div>
+  </div>
+
+  <div class="hero" id="home">
+    <h1>Your Partner in Financial Growth</h1>
+    <p>We provide expert financial advice and investment solutions to help you achieve your goals.</p>
+    <a href="#services" class="cta-button">Get Started</a>
+  </div>
+
+  <div class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="card">
+        <h3>Investment Planning</h3>
+        <p>Tailored investment strategies to maximize your returns.</p>
+      </div>
+      <div class="card">
+        <h3>Share Market</h3>
+        <p>Provide advice about stocks for the share market.</p>
+      </div>
+      <div class="card">
+        <h3>Finance</h3>
+        <p>Plan for a secure and comfortable financial future.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="about" id="about">
+    <div class="content">
+      <h2>About Us</h2>
+      <p>We are a team of experienced financial advisors dedicated to helping you achieve your financial goals. With years of expertise, we provide personalized solutions to grow your wealth.</p>
+      <a href="#about" class="learn-more">Learn More</a>
+    </div>
+    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202405/stock-market-hits-5-trillion-milestone-210155161-16x9_0.jpeg?VersionId=0oDLxM95pocHEUHfkSZr7KPvNscxyAXE" alt="Stock Market Growth" width="500">
+  </div>
+
+  <div class="testimonials" id="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-cards">
+      <div class="card">
+        <p>"FinancePro helped me grow my investments significantly. Highly recommended!"</p>
+        <div class="author">- John Doe</div>
+      </div>
+      <div class="card">
+        <p>"Their stock planning services are top-notch. I feel secure about my future."</p>
+        <div class="author">- Jane Smith</div>
+      </div>
+      <div class="card">
+        <p>"Professional and reliable. They truly care about their clients."</p>
+        <div class="author">- Michael Brown</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer" id="contact">
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+    </div>
+    <div class="copyright">
+      &copy; 2025 FinancePro. All rights reserved.
+    </div>
+  </div>
+
+  <button id="back-to-top" onclick="scrollToTop()">↑</button>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    window.onscroll = function() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("back-to-top").style.display = "block";
+      } else {
+        document.getElementById("back-to-top").style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+
+</html>
